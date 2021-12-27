@@ -1,27 +1,34 @@
 # CursoAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.9.
+# Adicionar SSH no GitHub
 
-## Development server
+```
+ssh-keygen -t ed25519 -C "arthurrquintanilha@gmail.com"
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+***senha
 
-## Code scaffolding
+```
+eval $(ssh-agent -s)
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+ssh-add ~/.ssh/id_ed25519
+```
 
-## Build
+```
+clip < ~/.ssh/id_ed25519.pub
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+Depois abra o github painel, adicione nova chave e cole o conteúdo nela.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Teste a conexão com este comando:
 
-## Running end-to-end tests
+```
+ssh -T git@github.com
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Fonte:
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+[https://dev.to/dxwebster/como-conectar-ao-github-com-chaves-ssh-1i41](https://dev.to/dxwebster/como-conectar-ao-github-com-chaves-ssh-1i41)
